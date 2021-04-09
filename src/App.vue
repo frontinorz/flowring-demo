@@ -1,6 +1,6 @@
 <template>
   <q-layout view="lHh Lpr lFf">
-    <q-header elevated class="glossy">
+    <q-header elevated class="">
       <q-toolbar>
         <q-btn
           flat
@@ -12,10 +12,8 @@
         />
 
         <q-toolbar-title>
-          Quasar App
+          Flowring Demo
         </q-toolbar-title>
-
-        <div>Quasar v{{ $q.version }}</div>
       </q-toolbar>
     </q-header>
 
@@ -56,7 +54,7 @@
 
 <script>
 export default {
-  name: 'LayoutDefault',
+  name: 'app',
 
   data () {
     return {
