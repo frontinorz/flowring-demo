@@ -1,16 +1,21 @@
 import { apiGetDiscover } from '@/api/movie'
 
 const state = {
-  movieList: []
+  movieList: [],
+  isPageInvoke: false
 }
 
 const getters = {
-  movieList: state => state.movieList
+  movieList: state => state.movieList,
+  isPageInvoke: state => state.isPageInvoke
 }
 
 const mutations = {
   setList (state, list) {
     state.movieList = state.movieList.concat(list)
+  },
+  setPageInvoke (state) {
+    state.isPageInvoke = true
   }
 }
 
