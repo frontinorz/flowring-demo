@@ -10,7 +10,7 @@ const getters = {
 
 const mutations = {
   setList (state, list) {
-    state.movieList = list
+    state.movieList = state.movieList.concat(list)
   }
 }
 
