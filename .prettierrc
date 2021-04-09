@@ -1,8 +1,9 @@
 {
-  "printWidth": 200,
+  "printWidth": 0,
   "singleQuote": true,
   "bracketSpacing": true,
   "jsxBracketSameLine": true,
   "htmlWhitespaceSensitivity": "ignore",
-  "semi": false
+  "semi": false,
+  "trailingComma": "none"
 }
