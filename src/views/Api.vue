@@ -56,6 +56,7 @@ export default {
   created () {
     if (!this.isPageInvoke) {
       this.movieBrowseHandler(this.movieSort.value, this.voteCount, this.page)
+      this.getGenreList()
       this.setPageInvoke()
     }
   },
@@ -88,13 +89,15 @@ export default {
   computed: {
     ...mapGetters('movie', [
       'movieList',
+      'genresList',
       'isPageInvoke'
     ]
     )
   },
   methods: {
     ...mapActions('movie', [
-      'browseMovie'
+      'browseMovie',
+      'getGenreList'
     ]),
     ...mapMutations('movie', [
       'setPageInvoke',

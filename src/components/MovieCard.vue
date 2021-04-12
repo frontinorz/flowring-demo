@@ -8,6 +8,11 @@
       ></q-img>
       <q-card-section class="w-50">
         <h4 class="text-h6 q-my-none">{{ item.title }}</h4>
+        <div class="row items-center">
+          <span v-for="item in genreTranslateHandler(item.genre_ids)" :key="item" class="text-caption text-grey q-mr-sm">
+            {{item}}
+          </span>
+        </div>
         <div class="row items-center q-mb-sm">
           <q-icon name="star" class="text-orange"/>
           <span class="text-caption text-grey q-ml-sm">
@@ -15,6 +20,7 @@
             ({{ item.vote_count }})
           </span>
         </div>
+
         <p class="line-clamp">{{ item.overview }}</p>
       </q-card-section>
     </q-card-section>
@@ -22,6 +28,7 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 export default {
   props: {
     item: {
@@ -36,6 +43,17 @@ export default {
   data () {
     return {
       imgUrlPrefix: 'https://image.tmdb.org/t/p/w400'
+    }
+  },
+  computed: {
+    ...mapGetters('movie', ['genresList'])
+  },
+  methods: {
+    genreTranslateHandler (genreIDs) {
+      return genreIDs.map(id => {
+        const genre = this.genresList.find(item => item.id === id)
+        return genre.name
+      })
     }
   }
 }
