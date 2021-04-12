@@ -14,6 +14,9 @@ const mutations = {
   setList (state, list) {
     state.movieList = state.movieList.concat(list)
   },
+  resetList (state, list) {
+    state.movieList = []
+  },
   setPageInvoke (state) {
     state.isPageInvoke = true
   }

@@ -21,9 +21,9 @@
       v-model="leftDrawerOpen"
       show-if-above
       bordered
-      content-class="bg-grey-2"
+      :width="200"
     >
-      <q-list>
+      <q-list class="q-pb-md">
         <q-item-label header>連結</q-item-label>
         <q-item clickable to="/" tag="a">
           <q-item-section avatar>
@@ -44,6 +44,12 @@
           </q-item-section>
         </q-item>
       </q-list>
+      <q-toggle
+        v-model="isDarkmode"
+        @input="darkmodeHandler"
+        label="深色主題"
+        class="absolute-bottom q-pb-sm"
+      ></q-toggle>
     </q-drawer>
 
     <q-page-container>
@@ -57,13 +63,20 @@ export default {
   name: 'app',
   data () {
     return {
-      leftDrawerOpen: false
+      leftDrawerOpen: false,
+      isDarkmode: true
     }
   },
   created () {
     console.log(this.$q.dark.isActive)
+    this.$q.dark.set(this.isDarkmode)
     console.log('API:', process.env.VUE_APP_API_URL)
     console.log('ENV:', process.env.NODE_ENV)
+  },
+  methods: {
+    darkmodeHandler () {
+      this.$q.dark.set(this.isDarkmode)
+    }
   }
 }
 </script>
