@@ -1,4 +1,7 @@
+console.log(process.env.VUE_APP_API_URL)
+
 module.exports = {
+  productionSourceMap: process.env.NODE_ENV !== 'production',
   css: {
     loaderOptions: {
       sass: {

@@ -51,7 +51,7 @@ export default {
       'setPageInvoke'
     ]),
     onLoad (index, done) {
-      console.log('Loading')
+      // console.log('Loading')
       this.page++
       this.browseMovie(`&language=zh-TW&sort_by=popularity.desc&include_video&page=${this.page}`)
       done()
