@@ -25,7 +25,7 @@
         class="q-pt-md"
       >
         <template v-slot:control >
-          <q-slider class="q-mt-lg" v-model="voteCount" :min="1" :max="3000" label label-always></q-slider>
+          <q-slider class="q-mt-lg" v-model="voteCount" :min="0" :max="5000" :step="100" label label-always></q-slider>
         </template>
       </q-field>
       <div>
