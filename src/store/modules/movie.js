@@ -25,7 +25,7 @@ const mutations = {
 const actions = {
   async browseMovie ({ commit }, query) {
     const res = await apiGetDiscover(query)
-    console.log('Result', res.data.results)
+    // console.log('Result', res.data.results)
     commit('setList', res.data.results)
     return res
   }

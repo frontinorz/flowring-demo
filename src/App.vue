@@ -68,10 +68,10 @@ export default {
     }
   },
   created () {
-    console.log(this.$q.dark.isActive)
     this.$q.dark.set(this.isDarkmode)
-    console.log('API:', process.env.VUE_APP_API_URL)
-    console.log('ENV:', process.env.NODE_ENV)
+    // console.log(this.$q.dark.isActive)
+    // console.log('API:', process.env.VUE_APP_API_URL)
+    // console.log('ENV:', process.env.NODE_ENV)
   },
   methods: {
     darkmodeHandler () {

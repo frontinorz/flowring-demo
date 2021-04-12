@@ -7,6 +7,8 @@ import 'normalize.css'
 import VueLogger from 'vuejs-logger'
 import './quasar'
 
+import '@/api/interceptors' //* axios攔截器
+
 const isProduction = process.env.NODE_ENV === 'production'
 const options = {
   isEnabled: true,
