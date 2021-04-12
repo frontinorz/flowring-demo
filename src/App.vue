@@ -27,7 +27,7 @@
         <q-item-label header>連結</q-item-label>
         <q-item clickable to="/" tag="a">
           <q-item-section avatar>
-            <q-icon name="code" />
+            <q-icon name="plus_one" />
           </q-item-section>
           <q-item-section>
             <q-item-label>計時器</q-item-label>
@@ -36,7 +36,7 @@
         </q-item>
         <q-item clickable to="/api" tag="a">
           <q-item-section avatar>
-            <q-icon name="school" />
+            <q-icon name="format_list_bulleted" />
           </q-item-section>
           <q-item-section>
             <q-item-label>API</q-item-label>
@@ -55,11 +55,15 @@
 <script>
 export default {
   name: 'app',
-
   data () {
     return {
       leftDrawerOpen: false
     }
+  },
+  created () {
+    console.log(this.$q.dark.isActive)
+    console.log('API:', process.env.VUE_APP_API_URL)
+    console.log('ENV:', process.env.NODE_ENV)
   }
 }
 </script>
