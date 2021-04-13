@@ -1,5 +1,5 @@
 <template>
-  <q-layout view="lHh Lpr lFf">
+  <q-layout view="lHh Lpr lFf" id="app">
     <q-header elevated class="">
       <q-toolbar>
         <q-btn
@@ -55,10 +55,26 @@
     <q-page-container>
       <router-view />
     </q-page-container>
+    <q-dialog v-model="alert">
+      <q-card>
+        <q-card-section>
+          <div class="text-h6">警告</div>
+        </q-card-section>
+
+        <q-card-section class="q-pt-none">
+          {{ alertMsg }}
+        </q-card-section>
+
+        <q-card-actions align="right">
+          <q-btn flat label="OK" color="primary" @click="setAlert(false)"></q-btn>
+        </q-card-actions>
+      </q-card>
+    </q-dialog>
   </q-layout>
 </template>
 
 <script>
+import { mapGetters, mapMutations } from 'vuex'
 export default {
   name: 'app',
   data () {
@@ -73,7 +89,17 @@ export default {
     // console.log('API:', process.env.VUE_APP_API_URL)
     // console.log('ENV:', process.env.NODE_ENV)
   },
+  computed: {
+    ...mapGetters(['alert', 'alertMsg']),
+    alert: {
+      get: function () {
+        return this.$store.getters.alert
+      },
+      set: function (bool) {}
+    }
+  },
   methods: {
+    ...mapMutations(['setAlert']),
     darkmodeHandler () {
       this.$q.dark.set(this.isDarkmode)
     }

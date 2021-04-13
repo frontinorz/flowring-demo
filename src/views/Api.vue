@@ -55,9 +55,8 @@ import MovieSkelton from '@/components/MovieSkelton'
 export default {
   created () {
     if (!this.isPageInvoke) {
-      this.movieBrowseHandler(this.movieSort.value, this.voteCount, this.page)
       this.getGenreList()
-      this.setPageInvoke()
+      this.movieBrowseHandler(this.movieSort.value, this.voteCount, this.page)
     }
   },
   components: {

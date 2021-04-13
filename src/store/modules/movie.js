@@ -30,7 +30,12 @@ const mutations = {
 const actions = {
   async browseMovie ({ commit }, query) {
     const res = await apiGetDiscover(query)
-    commit('setList', res.data.results)
+    if (res.status === 200) {
+      commit('setList', res.data.results)
+      if (!state.isPageInvoke) {
+        commit('setPageInvoke')
+      }
+    }
     return res
   },
   async getGenreList ({ commit }) {
