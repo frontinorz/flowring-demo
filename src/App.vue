@@ -30,8 +30,8 @@
             <q-icon name="plus_one" />
           </q-item-section>
           <q-item-section>
-            <q-item-label>計時器</q-item-label>
-            <q-item-label caption>計時器範例</q-item-label>
+            <q-item-label>計數器</q-item-label>
+            <q-item-label caption>計數器範例</q-item-label>
           </q-item-section>
         </q-item>
         <q-item clickable to="/api" tag="a">
